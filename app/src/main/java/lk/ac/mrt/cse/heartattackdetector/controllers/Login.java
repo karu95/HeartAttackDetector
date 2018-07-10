@@ -1,7 +1,7 @@
 package lk.ac.mrt.cse.heartattackdetector.controllers;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import lk.ac.mrt.cse.heartattackdetector.R;
 
