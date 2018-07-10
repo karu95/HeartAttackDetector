@@ -16,6 +16,8 @@ public class Patient {
         this.emergencyContactNo = emergencyContactNo;
     }
 
+    public Patient(){}
+
     public String getPatientID() {
         return patientID;
     }

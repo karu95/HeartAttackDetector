@@ -12,6 +12,8 @@ public class Doctor {
         this.name = name;
     }
 
+    public Doctor(){}
+
     public String getName() {
         return name;
     }
