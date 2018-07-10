@@ -1,5 +1,9 @@
 package lk.ac.mrt.cse.heartattackdetector.model;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import lk.ac.mrt.cse.heartattackdetector.util.FirebaseConnector;
+
 public class User {
     private String username;
     private String password;
@@ -33,5 +37,15 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void saveUser() {
+        FirebaseFirestore firestore = FirebaseConnector.getConnector().getConnection();
+    }
+
+    public static User getuser(String username) {
+        FirebaseFirestore firestore = FirebaseConnector.getConnector().getConnection();
+        User user = new User();
+        return user;
     }
 }

@@ -11,7 +11,7 @@ public class FirebaseConnector {
 
     private FirebaseFirestore firestore;
 
-    public FirebaseConnector getConnector(){
+    public static FirebaseConnector getConnector() {
         if (firebaseConnector == null){
             firebaseConnector = new FirebaseConnector();
         }
