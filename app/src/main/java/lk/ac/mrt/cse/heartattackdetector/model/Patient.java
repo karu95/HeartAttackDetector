@@ -1,5 +1,6 @@
 package lk.ac.mrt.cse.heartattackdetector.model;
 
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import lk.ac.mrt.cse.heartattackdetector.util.FirebaseConnector;
@@ -64,17 +65,17 @@ public class Patient {
 
     public void savePatient() {
         FirebaseFirestore firestore = FirebaseConnector.getConnector().getConnection();
-
-
+        firestore.collection("patients").document(patientID).set(this);
     }
 
     public static Patient getPatient(String patientID) {
         FirebaseFirestore firestore = FirebaseConnector.getConnector().getConnection();
-        Patient patient = new Patient();
+        DocumentReference patientDoc = firestore.collection("patients").document(patientID);
+        Patient patient = patientDoc.get().getResult().toObject(Patient.class);
         return patient;
     }
 
-    public void updatePatient() {
+    public void updatePatient(Patient patient) {
         FirebaseFirestore firestore = FirebaseConnector.getConnector().getConnection();
 
     }

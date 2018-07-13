@@ -1,5 +1,6 @@
 package lk.ac.mrt.cse.heartattackdetector.model;
 
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -10,10 +11,12 @@ public class Doctor {
     private String name;
     private String doctorID;
     private HashMap<String, String> relatedPatients;
+    private String contactNo;
 
-    public Doctor(String name, String doctorID) {
+    public Doctor(String name, String doctorID, String contactNo) {
         this.doctorID = doctorID;
         this.name = name;
+        this.contactNo = contactNo;
     }
 
     public Doctor(){}
@@ -50,21 +53,30 @@ public class Doctor {
 
     public void saveDoctor() {
         FirebaseFirestore firestore = FirebaseConnector.getConnector().getConnection();
-
+        firestore.collection("doctors").document(doctorID).set(this);
     }
 
-    public static Doctor getDoctor() {
+    public static Doctor getDoctor(String doctorID) {
         FirebaseFirestore firestore = FirebaseConnector.getConnector().getConnection();
-        Doctor doctor = new Doctor();
+        DocumentReference doctorRef = firestore.collection("doctors").document(doctorID);
+        Doctor doctor = doctorRef.get().getResult().toObject(Doctor.class);
         return doctor;
     }
 
-    public void updateDoctor() {
+    public void updateDoctor(Doctor doctor) {
         FirebaseFirestore firestore = FirebaseConnector.getConnector().getConnection();
 
     }
 
     public void setRelatedPatients(HashMap<String, String> relatedPatients) {
         this.relatedPatients = relatedPatients;
+    }
+
+    public String getContactNo() {
+        return contactNo;
+    }
+
+    public void setContactNo(String contactNo) {
+        this.contactNo = contactNo;
     }
 }
