@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="268dp"
+        android:layout_height="39dp"
+        android:text="Register"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="378dp" />
+
+    <EditText
+        android:id="@+id/txtDrName"
+        android:layout_width="268dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:hint="Doctor's Name"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="245dp" />
+
+    <EditText
+        android:id="@+id/txtContact"
+        android:layout_width="268dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:hint="Contact No."
+        android:inputType="number"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="313dp" />
+
+    <EditText
+        android:id="@+id/txtCnfmPswd"
+        android:layout_width="268dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <EditText
+        android:id="@+id/txtPassword"
+        android:layout_width="268dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="109dp" />
+
+    <EditText
+        android:id="@+id/txtUsername"
+        android:layout_width="268dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="39dp" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="269dp"
+        android:layout_height="39dp"
+        android:text="Login"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="430dp" />
+
+</android.support.constraint.ConstraintLayout>

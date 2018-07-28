@@ -5,9 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import lk.ac.mrt.cse.heartattackdetector.R;
 
-
-public class Login extends AppCompatActivity {
-
+public class DoctorRegister extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

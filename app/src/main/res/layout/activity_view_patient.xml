@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtHeartbeat"
+        android:layout_width="164dp"
+        android:layout_height="49dp"
+        android:lineSpacingExtra="8sp"
+        android:text="Heartbeat"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="110dp"
+        tools:layout_editor_absoluteY="231dp" />
+
+    <TextView
+        android:id="@+id/txtEmergencyContact"
+        android:layout_width="246dp"
+        android:layout_height="32dp"
+        android:text="Emergency Contact No"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="133dp" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="246dp"
+        android:layout_height="32dp"
+        android:text="Name"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="77dp" />
+</android.support.constraint.ConstraintLayout>
