@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "529040502065-mdv3m0php8h4anmqlsi45aa5d0nrq5dn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lk.ac.mrt.cse.heartattackdetector",
+            "certificate_hash": "91df529e9cb3628c43b5fc4a42c9d14720f17b24"
+          }
+        },
+        {
           "client_id": "529040502065-s2une3c27u8r1200u2f8dk4egs9pvre3.apps.googleusercontent.com",
           "client_type": 3
         }

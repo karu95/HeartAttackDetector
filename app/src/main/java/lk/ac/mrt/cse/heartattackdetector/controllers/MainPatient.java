@@ -18,6 +18,16 @@ public class MainPatient extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page_patient);
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        Thread connectionTester = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    if (bluetoothAdapter.isEnabled()) {
+
+                    }
+                }
+            }
+        });
     }
 
     private void bluetoothOn(View view) {

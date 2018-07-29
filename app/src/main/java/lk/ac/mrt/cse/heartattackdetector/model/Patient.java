@@ -1,5 +1,10 @@
 package lk.ac.mrt.cse.heartattackdetector.model;
 
+import android.support.annotation.NonNull;
+import android.util.Log;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -10,14 +15,12 @@ public class Patient {
     private String name;
     private double heartRate;
     private String relatedDoctor;
-    private String emergencyContactName;
     private String emergencyContactNo;
 
     public Patient(String patientID, String name,
-                   String emergencyContactName, String emergencyContactNo) {
+                   String emergencyContactNo) {
         this.patientID = patientID;
         this.name = name;
-        this.emergencyContactName = emergencyContactName;
         this.emergencyContactNo = emergencyContactNo;
     }
 
@@ -39,14 +42,6 @@ public class Patient {
         this.heartRate = heartRate;
     }
 
-    public String getEmergencyContactName() {
-        return emergencyContactName;
-    }
-
-    public void setEmergencyContactName(String emergencyContactName) {
-        this.emergencyContactName = emergencyContactName;
-    }
-
     public String getEmergencyContactNo() {
         return emergencyContactNo;
     }
@@ -65,7 +60,18 @@ public class Patient {
 
     public void savePatient() {
         FirebaseFirestore firestore = FirebaseConnector.getConnector().getConnection();
-        firestore.collection("patients").document(patientID).set(this);
+        firestore.collection("patients").document(patientID).set(this).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d("INFO", "Patient successfully stored");
+            }
+        })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("Failure", e.getMessage());
+                    }
+                });
     }
 
     public static Patient getPatient(String patientID) {

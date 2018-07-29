@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controllers.Login">
+        <activity android:name=".controllers.MainPatient">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,9 +19,9 @@
         <activity android:name=".controllers.ViewPatients"></activity>
         <activity android:name=".controllers.DoctorRegister"></activity>
         <activity android:name=".controllers.MainDoctor"></activity>
-        <activity android:name=".controllers.MainPatient"></activity>
         <activity android:name=".controllers.ViewPatient"></activity>
         <activity android:name=".controllers.PatientRegister"></activity>
+        <activity android:name=".controllers.Register"></activity>
     </application>
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -36,4 +36,9 @@
     <permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

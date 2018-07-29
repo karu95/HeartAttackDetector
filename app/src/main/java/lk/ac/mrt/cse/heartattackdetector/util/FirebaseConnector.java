@@ -1,6 +1,7 @@
 package lk.ac.mrt.cse.heartattackdetector.util;
 
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreSettings;
 
 /**
  * Created by Mevan on 7/7/2018.
@@ -20,6 +21,10 @@ public class FirebaseConnector {
 
     private FirebaseConnector() {
         firestore = FirebaseFirestore.getInstance();
+        FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
+                .setTimestampsInSnapshotsEnabled(true)
+                .build();
+        firestore.setFirestoreSettings(settings);
     }
 
     public FirebaseFirestore getConnection() {

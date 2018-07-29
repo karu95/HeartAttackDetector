@@ -1,5 +1,10 @@
 package lk.ac.mrt.cse.heartattackdetector.model;
 
+import android.support.annotation.NonNull;
+import android.util.Log;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -53,7 +58,19 @@ public class Doctor {
 
     public void saveDoctor() {
         FirebaseFirestore firestore = FirebaseConnector.getConnector().getConnection();
-        firestore.collection("doctors").document(doctorID).set(this);
+        firestore.collection("doctors").document(doctorID).set(this).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d("INFO", "Doctor successfully stored");
+            }
+        })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("Failure", e.getMessage());
+                    }
+                });
+        ;
     }
 
     public static Doctor getDoctor(String doctorID) {

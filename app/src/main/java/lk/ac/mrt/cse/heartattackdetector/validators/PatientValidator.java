@@ -7,8 +7,6 @@ public class PatientValidator {
         String valid = "valid";
         if (patient.getName().isEmpty()) {
             valid = "Please provide name of the patient";
-        } else if (patient.getEmergencyContactName().isEmpty()) {
-            valid = "Provide emergency contact details";
         } else if (patient.getEmergencyContactNo().isEmpty()) {
             valid = "Provide emergency contact details";
         }

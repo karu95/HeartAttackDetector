@@ -5,69 +5,45 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnRegister2"
         android:layout_width="268dp"
         android:layout_height="39dp"
-        android:text="Register"
+        android:text="Submit"
         tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="378dp" />
+        tools:layout_editor_absoluteY="236dp" />
 
     <EditText
-        android:id="@+id/txtDrName"
+        android:id="@+id/txtPatientName2"
         android:layout_width="268dp"
         android:layout_height="44dp"
         android:ems="10"
-        android:hint="Doctor's Name"
+        android:hint="Doctor Name"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="245dp" />
+        tools:layout_editor_absoluteY="99dp" />
 
     <EditText
-        android:id="@+id/txtContact"
+        android:id="@+id/txtEmergencyNo2"
         android:layout_width="268dp"
         android:layout_height="44dp"
         android:ems="10"
         android:hint="Contact No."
         android:inputType="number"
         tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="313dp" />
-
-    <EditText
-        android:id="@+id/txtCnfmPswd"
-        android:layout_width="268dp"
-        android:layout_height="44dp"
-        android:ems="10"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="177dp" />
-
-    <EditText
-        android:id="@+id/txtPassword"
-        android:layout_width="268dp"
-        android:layout_height="44dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="109dp" />
-
-    <EditText
-        android:id="@+id/txtUsername"
-        android:layout_width="268dp"
-        android:layout_height="44dp"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="39dp" />
+        tools:layout_editor_absoluteY="167dp" />
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnLogin2"
         android:layout_width="269dp"
         android:layout_height="39dp"
         android:text="Login"
         tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="430dp" />
+        tools:layout_editor_absoluteY="289dp" />
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="264dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="51dp" />
 </android.support.constraint.ConstraintLayout>

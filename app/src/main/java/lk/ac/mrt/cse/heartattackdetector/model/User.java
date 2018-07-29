@@ -1,11 +1,17 @@
 package lk.ac.mrt.cse.heartattackdetector.model;
 
+import android.support.annotation.NonNull;
+import android.util.Log;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import lk.ac.mrt.cse.heartattackdetector.util.FirebaseConnector;
 
 public class User {
+    private static User user;
     private String username;
     private String password;
     private String userType;
@@ -42,13 +48,29 @@ public class User {
 
     public void saveUser() {
         FirebaseFirestore firestore = FirebaseConnector.getConnector().getConnection();
-        firestore.collection("users").document(username).set(this);
+        Log.d("INFO", "Firestore created");
+        firestore.collection("users").document(username).set(this).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d("INFO", "Successfully stored!");
+            }
+        })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("Failure", e.getMessage());
+                    }
+                });
+        Log.d("INFO", "user saved " + username);
     }
 
-    public static User getuser(String username) {
+    public static User getUser(String username) {
+        user = null;
         FirebaseFirestore firestore = FirebaseConnector.getConnector().getConnection();
         DocumentReference userRef = firestore.collection("users").document(username);
-        User user = userRef.get().getResult().toObject(User.class);
+        if (userRef.get().isComplete()) {
+            user = userRef.get().getResult().toObject(User.class);
+        }
         return user;
     }
 
